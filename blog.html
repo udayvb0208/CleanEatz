@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
+    <script>
+        function navigate() {
+            const menu = document.getElementById('menu');
+            const selectedPage = menu.value;
+
+            // Define the URL paths for each page
+            const pages = {
+                "Home": "home.html",
+                "Blog": "blog.html",
+                "Recipes Page": "recipes.html",
+                "About Us": "about.html",
+                "User Account": "account.html",
+                "Shopping Cart": "cart.html",
+                "Contact": "contact.html"
+            };
+
+            // Navigate to the selected page
+            if (pages[selectedPage]) {
+                window.location.href = pages[selectedPage];
+            }
+        }
+    </script>
+
+
+    <style>
+        /* nav-css */
+
+
+
+        .navbar nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            box-shadow: 0px 8px 6px 0px #bfbfbf;
+            margin: 0 auto
+        }
+
+        .offer {
+            color: #e7e5ea;
+            font-size: 30px;
+            font-family: 'lobster';
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-left: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            margin-left: 25px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links li a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
+
+
+
+
+        body {
+            background-color: white;
+        }
+
+        .div-2-s {
+            text-align: center;
+        }
+
+        .first-img {
+            border-radius: 30px;
+            width: 610px;
+            height: 350px;
+
+        }
+
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        .first-div {
+            background-color: white;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+        }
+
+        .first-subf-div {
+            background-color: white;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 50px;
+            margin-bottom: 15px;
+        }
+
+        .first-img-div {
+            background-color: white;
+            margin: 7px;
+        }
+
+
+
+        .first-subs-div {
+            background-color: white;
+            margin-top: 50px;
+            margin-bottom: 15px;
+        }
+
+        .h2-class {
+            text-align: left;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+
+
+        /* options css */
+
+
+
+        .container {
+            display: flex;
+            background-color: #fff;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100%;
+
+        }
+
+        .left-content,
+        .right-content {
+            padding: 40px;
+        }
+
+        .left-content {
+            flex: 1;
+            background-color: #fff;
+            margin-left: 100px;
+        }
+
+        .right-content {
+            flex: 1;
+            background-color: #fff;
+            margin-right: 100px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input,
+        textarea {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 14px;
+            background-color: #f4f4f9;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        input:focus,
+        textarea:focus {
+
+            box-shadow: 0 0 8px rgba(136, 176, 75, 0.3);
+            outline: none;
+        }
+
+
+        /*footer*/
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        .footer {
+            background: linear-gradient(to right, #6a994e, #a7c957);
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 40px 20px;
+            text-align: left;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px 10px 0 0;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin: 20px;
+        }
+
+        .footer h2,
+        .footer h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #fffbeb;
+        }
+
+        .footer p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #e9f5db;
+            line-height: 1.6;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons a img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .social-icons a img:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+
+        .footer form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer form label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #e9f5db;
+        }
+
+        .footer form input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #f4f4f9;
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .footer form input:focus {
+            border-color: #88b04b;
+            box-shadow: 0 0 8px rgba(136, 176, 75, 0.3);
+            outline: none;
+        }
+
+        .footer form button {
+            padding: 10px;
+            background-color: #ffcc29;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+
+        }
+
+        .footer form button:hover {
+            background-color: #ffb703;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #e9f5db;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+            margin-left: 15px;
+
+        }
+
+        .dropdown-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+            margin-top: 10px;
+
+
+
+        }
+
+        .header-cs {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .logo {
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-top: 3px;
+
+
+        }
+
+        .dropdown-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+
+        }
+
+        .logo {
+            margin-right: 800px;
+        }
+
+        .btn {
+
+            text-decoration: underline;
+            font-size: 15px;
+            color: black;
+            border: none;
+
+
+            background-color: none;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header-cs">
+        <div class="logo">
+            <img src="images\CleanEATZ_Logo.png" alt="Logo">
+        </div>
+        <nav>
+            <div class="dropdown">
+                <div class="dropdown-content">
+                    <a href="index.html"><button class="btn">Home</button></a>
+                    <a href="blog.html"><button class="btn">Blog</button></a>
+                    <a href="about.html"><button class="btn">About Us</button></a>
+                    <a href=""><button class="btn">User Account</button></a>
+                    <a href="shopping cart.html"><button class="btn">Cart</button></a>
+                    <a href="contact-us.html"><button class="btn">Contact Us</button></a>
+                    <a href="login.html"><button class="btn">Login Page</button></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div>
+
+
+        <div class="first-div">
+
+
+
+            <div class="first-subf-div">
+                <img src="https://images.unsplash.com/photo-1584448275442-37f6357a499e?ixid=M3wzOTE5Mjl8MHwxfHNlYXJjaHwyOXx8TnV0cml0aW91cyUyMEZvb2RzfGVufDB8fHx8MTcxOTUwODgyN3ww&ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&h=1080"
+                    alt="Made with ingredients" class="first-img">
+                <h2 class="h2-class">Delicious and Nutritious Malt Mixes Made with <br>Wholesome Ingredients</h2>
+                <p>Discover how cleaneatz is revolutionizing the way we snack with their tasty and healthy <br>
+                    malt mixes. Packed with millets and nuts, these products are perfect for health <br>
+                    -conscious individuals looking for natural and sustainable food options that don't skimp <br>
+                    on flavor. Learn more about the power of simple, clean ingredients in nourishing the <br>
+                    body and delighting the senses.</p>
+                <p>5/8/24. uploaded</p>
+
+            </div>
+
+            <div class="first-subs-div">
+                <img src="https://images.unsplash.com/photo-1683541606184-fecb068b26eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Made with ingredients" class="first-img">
+                <h2 class="h2-class">Delicious and Nutritious Malt Mixes for Health <br>-Conscious Individuals</h2>
+                <p>Discover the power of simple, clean ingredients with Cleaneatz's wholesome <br>
+                    products. Our tasty malt mixes, made with millets and nuts, are perfect for those <br>
+                    seeking natural and sustainable food options. Nourish your body and delight your <br>
+                    senses with our flavorful and healthy creations.</p>
+                <p>5/8/24. uploaded</p>
+
+            </div>
+
+        </div>
+
+        <div>
+            <h1 class="div-2-s">Wholesome Mixes</h1>
+            <p class="div-2-s">Discover our nutritious malt mixes made with millets and nuts.</p>
+
+        </div>
+
+
+        <div class="first-div">
+
+
+
+            <div class="first-img-div">
+                <img src="https://plus.unsplash.com/premium_photo-1705687056564-fe42fc24c359?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Made with ingredients" class="first-img">
+
+            </div>
+
+            <div class="first-img-div">
+                <img src="https://images.unsplash.com/photo-1449831438585-6f419654d73e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Made with ingredients" class="first-img">
+            </div>
+
+        </div>
+
+        <div>
+
+            <div class="first-div">
+
+                <div class="first-img-div">
+
+                    <img src="https://images.unsplash.com/photo-1464454709131-ffd692591ee5?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Made with ingredients" class="first-img">
+
+
+                </div>
+
+                <div class="first-img-div">
+                    <img src="https://images.unsplash.com/photo-1439127989242-c3749a012eac?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Made with ingredients" class="first-img">
+                </div>
+
+
+            </div>
+        </div>
+        <div>
+            <div class="container">
+                <div class="left-content">
+                    <h1>Delightful Malt Blends for Your Well-being</h1>
+                    <p>Explore our delectable and wholesome malt blends crafted with natural ingredients such as
+                        millets and nuts. Revitalize your body with our eco-friendly and nourishing food choices.
+                    </p>
+                    <p><strong>Nutrient-rich</strong><br>jumblat</p>
+                    <p><strong>Contact</strong><br>info@example.com</p>
+                </div>
+                <div class="right-content">
+                    <form>
+                        <label for="product">Premium Food Products</label>
+                        <input type="text" id="product" name="product" placeholder="Choose natural and healthy options">
+
+                        <label for="malt">Delicious Malt Mixes*</label>
+                        <input type="text" id="malt" name="malt" placeholder="Rejuvenate and enjoy">
+
+                        <label for="ingredients">Pure, Simple Ingredients*</label>
+                        <textarea id="ingredients" name="ingredients"
+                            placeholder="Create delicious and healthy blends"></textarea>
+
+                        <button type="submit">Submit your preferences</button>
+                    </form>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div class="footer-section">
+                    <h2>Nutritious</h2>
+                    <p>Wholesome and tasty malt mixes for health-conscious individuals.</p>
+                    <div class="social-icons">
+                        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_de_Facebook.png"
+                                alt="Facebook"></a>
+                        <a href="https://www.instagram.com/cleaneatz.india?igsh=YzljYTk1ODg3Zg=="><img
+                                src="https://seeklogo.com/images/I/instagram-new-2016-logo-D9D42A0AD4-seeklogo.com.png"
+                                alt="Instagram"></a>
+                        <a href="#"><img
+                                src="https://img.freepik.com/premium-vector/tiktok-app-icon-social-media-logo-vector-illustration_277909-404.jpg?w=740"
+                                alt="TikTok"></a>
+                        <a href="#"><img
+                                src="https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg?t=st=1719935073~exp=1719938673~hmac=6ce7c91be9ddfeece0d6ba456ae1d2d9b81d6257ee7bbbd68ece050be6df56f7&w=740"
+                                alt="Twitter"></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Sustainable</h3>
+                    <p>555-123-4567<br>cleaneatz@example.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Natural</h3>
+                    <form>
+                        <label for="email">Wholesome and nutritious food products</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address here">
+                        <button type="submit">Submit your email address</button>
+                    </form>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2024. All rights reserved.</p>
+                </div>
+            </footer>
+
+
+</body>
+
+</html>

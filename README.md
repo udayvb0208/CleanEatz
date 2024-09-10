@@ -1,2 +1,2 @@
 # CleanEatz
-CleanEatz Food Website
+CleanEatz - A Healthy Food Delivery Website Template

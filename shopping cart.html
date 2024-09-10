@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Shopping Cart</title>
+
+  <script>
+    function navigate() {
+      const menu = document.getElementById('menu');
+      const selectedPage = menu.value;
+
+      // Define the URL paths for each page
+      const pages = {
+        "Home": "home.html",
+        "Blog": "blog.html",
+        "Recipes Page": "recipes.html",
+        "About Us": "about.html",
+        "User Account": "account.html",
+        "Shopping Cart": "cart.html",
+        "Contact": "contact.html"
+      };
+
+      // Navigate to the selected page
+      if (pages[selectedPage]) {
+        window.location.href = pages[selectedPage];
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+    }
+
+    a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+    }
+
+    a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .previous {
+      background-color: #f1f1f1;
+      color: black;
+    }
+
+    .next {
+      background-color: #2ed94d;
+      color: white;
+    }
+
+    .next-back-btns {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-top: 30px;
+      margin-left: 30px;
+    }
+
+    .footer {
+      background-color: #2ed94d;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 40px 20px;
+      text-align: left;
+      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px 10px 0 0;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+      margin: 20px;
+    }
+
+    .footer h2,
+    .footer h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #fffbeb;
+    }
+
+    .footer p {
+      font-size: 16px;
+      margin-bottom: 15px;
+      color: #e9f5db;
+      line-height: 1.6;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-icons a img {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.3s, filter 0.3s;
+    }
+
+    .social-icons a img:hover {
+      transform: scale(1.1);
+      filter: brightness(1.2);
+    }
+
+    .footer form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer form label {
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #e9f5db;
+    }
+
+    .footer form input {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      background-color: #f4f4f9;
+      color: #333;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .footer form input:focus {
+      border-color: #88b04b;
+      box-shadow: 0 0 8px rgba(136, 176, 75, 0.3);
+      outline: none;
+    }
+
+    .footer form button {
+      padding: 10px;
+      background-color: #ffcc29;
+      color: #333;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+      box-shadow: 0 4px 10px rgba(255, 204, 41, 0.2);
+    }
+
+    .footer form button:hover {
+      background-color: #ffb703;
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #e9f5db;
+    }
+
+    .menu-text {
+      color: #2ed94d;
+      font-size: 20px;
+      font-family: 'roboto';
+    }
+
+    .menu-cls {
+      height: 40px;
+      width: 100px;
+      margin-top: 15px;
+      margin-right: 20px;
+      border-width: 0px;
+      border: 0;
+    }
+
+    .navbar {
+      background-color: white;
+      color: white;
+      width: 100%;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+    }
+
+    .heads-aligning {
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+    }
+
+    .btn {
+      text-decoration: underline;
+      font-size: 15px;
+      color: black;
+      border: 0px;
+      border-radius: 0%;
+      background: none;
+    }
+
+    .explore-btn {
+      border-radius: 20px;
+      background-color: #2ed94d;
+      height: 40px;
+      color: white;
+      width: 160px;
+      font-family: 'lobster';
+      font-size: 20px;
+      border-width: 0px;
+      margin-bottom: 30px;
+      margin-right: 30px;
+    }
+
+    .make-orders {
+      border-radius: 20px;
+      background-color: #2ed94d;
+      height: 40px;
+      color: white;
+      width: 160px;
+      border-width: 0px;
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .navbar nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      box-shadow: 0px 8px 6px 0px #bfbfbf;
+      margin: 0 auto
+    }
+
+    .offer {
+      color: #e7e5ea;
+      font-size: 30px;
+      font-family: 'lobster';
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .logo img {
+      height: 60px;
+      margin-left: 20px;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      margin: 0;
+    }
+
+    .cardhead {
+      color: black;
+      font-size: 30px;
+      font-family: 'roboto';
+    }
+
+    .cardpara {
+      color: black;
+      font-size: 23px;
+      font-family: 'roboto';
+    }
+
+    .nav-links li {
+      margin: 0 15px;
+    }
+
+    .nav-links li a:hover {
+      background-color: #575757;
+      border-radius: 4px;
+    }
+
+    .Shopping-cart-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-left: 35px;
+      padding-top: 30px;
+    }
+
+    .cart {
+
+      box-shadow: 0px 8px 6px 0px #bfbfbf;
+    }
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td,
+    th {
+      border: 1px solid #bfbfbf;
+      text-align: center;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: white;
+    }
+
+    .product-img {
+      height: 40px;
+      width: 40px;
+    }
+
+    .quantity-in-de {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .coupon-input {
+      height: 37px;
+      width: 200px;
+      border: 1px solid #bfbfbf;
+      background-color: #eaeaea;
+    }
+
+    .coupon-btn {
+      background-color: #2ed94d;
+      height: 40px;
+      color: white;
+      width: 160px;
+      font-family: 'lobster';
+      font-size: 20px;
+      border-width: 0px;
+      margin-bottom: 30px;
+      margin-right: 30px;
+    }
+
+    .coupon-btn:hover {
+      background-color: #ddd;
+    }
+
+    .buycart-btn:hover {
+      background-color: #ddd;
+    }
+
+    .buycart-btn {
+      background-color: #2ed94d;
+      height: 40px;
+      color: white;
+      width: 160px;
+      font-family: 'lobster';
+      font-size: 20px;
+      border-width: 0px;
+      margin-bottom: 30px;
+      margin-right: 30px;
+      align-items: flex-end;
+    }
+
+    .coupon-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin-top: 5px;
+      margin-left: 2px;
+    }
+
+    .btn-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 5px;
+      margin-right: 2px;
+    }
+
+    .removecart-btn {
+      border: 0px;
+      background-color: transparent;
+    }
+
+    .removecart-btn:hover {
+      background-color: #ddd;
+    }
+
+    .buycart-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      align-items: flex-end;
+    }
+
+
+    .header-cs {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: white;
+    }
+
+    .logo {
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .dropdown-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+    }
+
+    .btn {
+      background-color: white;
+      text-decoration: underline;
+    }
+
+    .logo {
+      margin-right: 700px;
+    }
+  </style>
+  <div>
+
+    <header class="header-cs">
+      <div class="logo">
+        <img src="images\CleanEATZ_Logo.png" alt="Logo">
+      </div>
+      <nav>
+        <div class="dropdown">
+          <div class="dropdown-content">
+            <a href="index.html"><button class="btn">Home</button></a>
+            <a href="blog.html"><button class="btn">Blog</button></a>
+            <a href="about.html"><button class="btn">About Us</button></a>
+            <a href=""><button class="btn">User Account</button></a>
+            <a href="shopping cart.html"><button class="btn">Cart</button></a>
+            <a href="contact-us.html"><button class="btn">Contact Us</button></a>
+            <a href="login.html"><button class="btn">Login Page</button></a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+    <div class="Shopping-cart-container">
+
+      <h1>
+        Shopping Cart
+      </h1>
+      <div class="cart">
+        <table>
+          <tr>
+            <th> </th>
+            <th>Product</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+          <tr>
+            <td><button class="removecart-btn">&#9940;</button></td>
+            <td><img src="https://m.media-amazon.com/images/I/61hLCGqbRNL._SX679_.jpg" class="product-img" /></td>
+            <td>Millets</td>
+            <td>
+              <p>120 &#8360;</p>
+            </td>
+            <td>
+              <div class="quantity-in-de">
+                <button class="in-de-btns">-</button>
+                <p>1</p>
+                <button class="in-de-btns">+</button>
+              </div>
+            </td>
+            <td>120 &#8360;</td>
+          </tr>
+          <tr>
+            <td><button class="removecart-btn">&#9940;</button></td>
+            <td><img
+                src="https://eatanytime.in/cdn/shop/files/AlmondMock_e6e14416-dc64-4af5-bfec-1dd67df17cae-290456.png?v=1711101509&width=600"
+                class="product-img" /></td>
+            <td>Almonds</td>
+            <td>
+              <p>500 &#8360;</p>
+            </td>
+            <td>
+              <div class="quantity-in-de">
+                <button class="in-de-btns">-</button>
+                <p>1</p>
+                <button class="in-de-btns">+</button>
+              </div>
+            </td>
+            <td>500 &#8360;</td>
+          </tr>
+
+
+        </table>
+
+        <div class="btn-container">
+          <div class="coupon-container">
+            <input class="coupon-input" value="" placeholder="Coupon Code" />
+            <button type="submit" class="coupon-btn">Apply Coupon</button>
+          </div>
+          <div>
+            <button class="coupon-btn">Update Cart</button>
+          </div>
+        </div>
+
+        <div class="buycart-container">
+          <a href="BuyNow.html">
+            <button class="buycart-btn">Buy Cart</button>
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="next-back-btns">
+      <a href="#" class="previous">&laquo; Previous</a>
+      <a href="#" class="next">Next &raquo;</a>
+
+    </div>
+  </div>
+
+</body>
+
+</html>

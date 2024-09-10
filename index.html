@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://kit.fontawesome.com/88750aa7b6.js" crossorigin="anonymous"></script>
+    <title>Home</title>
+
+</head>
+
+<body>
+    <style>
+        .color-background {
+            background-color: #f5c31d;
+            overflow: auto;
+            padding-bottom: 50px;
+        }
+
+        .navbar {
+            background-color: white;
+            color: white;
+            width: 100%;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+        }
+
+        .heads-aligning {
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+        }
+
+        .btn {
+            text-decoration: underline;
+            font-size: 15px;
+            color: black;
+            border: 0px;
+            border-radius: 0%;
+            background: none;
+        }
+
+        .explore-btn {
+            border-radius: 5px;
+            background-color: transparent;
+            height: 40px;
+            color: black;
+            width: 160px;
+            font-family: 'lobster';
+            font-size: 20px;
+            margin-bottom: 30px;
+            border: 2px solid black;
+            margin-right: 30px;
+        }
+
+        .make-orders {
+            border-radius: 5px;
+            background-color: transparent;
+            height: 40px;
+            color: black;
+            width: 160px;
+            font-size: 20px;
+            margin-bottom: 30px;
+            border: 2px solid black;
+        }
+
+        .navbar nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .offer {
+            color: #e7e5ea;
+            font-size: 30px;
+            font-family: 'lobster';
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
+
+        .cardhead {
+            color: black;
+            font-size: 30px;
+            font-family: 'roboto';
+        }
+
+        .cardpara {
+            color: black;
+            font-size: 23px;
+            font-family: 'roboto';
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            display: block;
+        }
+
+        .nav-links li a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0px;
+            height: 100vh;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .unhide {
+            display: inline;
+        }
+
+        .main-background {
+            background-image: url("background.jpg");
+            background-size: cover;
+            display: flex;
+            padding: 30px;
+            height: 100vh;
+            flex-direction: column;
+            color: #fff;
+        }
+
+        .cont h1 {
+            font-size: 46px;
+            text-align: center;
+            width: 50%;
+        }
+
+        .menu {
+            color: #fabd05;
+            font-family: 'roboto';
+        }
+
+        .main-head {
+            font-size: 90px;
+            color: black;
+
+            font-family: 'roboto';
+        }
+
+        .main-para {
+            font-size: 20px;
+            color: black;
+
+            font-family: 'roboto';
+        }
+
+        .head-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 50px;
+            padding-left: 100px;
+            width: 50%;
+        }
+
+        .c {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 15px;
+            margin: 10px;
+            width: 350px;
+            background-color: white;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .card {
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .images {
+            height: 200px;
+            width: 290px;
+            border-radius: 10px;
+        }
+
+        @media (min-width:769px) {
+            nav {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .Navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 10vh;
+            }
+
+            .Navbar img {
+                padding: 10px;
+                height: 90px;
+                width: 90px;
+            }
+
+            .navlinks {
+                display: flex;
+                list-style: none;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .Navbar a {
+                margin-right: 20px;
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            .Navbar button {
+                padding: 10px 15px;
+                border: 0;
+                background: none;
+                text-decoration: underline;
+                border-radius: 20px;
+                font-size: 20px;
+                font-weight: 600;
+                border: 0px;
+            }
+
+            .main-background {
+                background-image: url("background.jpg");
+                background-size: cover;
+                display: flex;
+                height: 100vh;
+                flex-direction: column;
+                padding: 30px;
+                color: #fff;
+            }
+
+            .cont h1 {
+                font-size: 46px;
+                text-align: center;
+                width: 50%;
+            }
+
+            #hamburger {
+                display: none;
+            }
+
+            #close {
+                display: none;
+            }
+
+            .menu {
+                color: #fabd05;
+                font-family: 'roboto';
+            }
+
+            .main-head {
+                font-size: 50px;
+                color: black;
+
+                font-family: 'roboto';
+            }
+
+            .btn {
+                text-decoration: underline;
+                font-size: 15px;
+                color: black;
+                border-radius: 0px;
+                border: 0px;
+                background: none;
+                border-radius: 0%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .main-background {
+                border-image: url("background.jpg");
+                background-size: cover;
+                display: flex;
+                height: 100vh;
+                flex-direction: column;
+                color: #fff;
+                padding: 30px;
+            }
+
+            .cont h1 {
+                font-size: 26px;
+                text-align: center;
+                width: 80%;
+            }
+
+            .Navbar img {
+                padding: 10px;
+
+            }
+
+            .Navbar a {
+                display: block;
+                justify-content: space-between;
+                border: 1px solid #e7e5ea;
+                margin-bottom: 20px;
+                font-size: 20px;
+            }
+
+            .Navbar button {
+                border: 0px;
+                background: none;
+                padding: 10px 15px;
+                border-color: #ffdda9;
+                border: 0;
+                border-radius: 20px;
+                text-decoration: underline;
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            .menu {
+                color: #fabd05;
+                font-family: 'roboto';
+            }
+
+            .main-head {
+                font-size: 50px;
+                color: black;
+                font-family: 'roboto';
+            }
+
+            .btn {
+                text-decoration: underline;
+                font-size: 15px;
+                color: black;
+                border-radius: 0%;
+                border: 0px;
+                background: none;
+            }
+        }
+    </style>
+
+    <div class="color-background">
+        <header class="navbar">
+            <nav>
+                <div class="logo">
+                    <a href="#home">
+                        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=250,fit=crop,q=95/dJoJjLgZEPU99Dor/cleaneatz_logo-AzGrqLWx0eUDDLg4.png"
+                            alt="CleanEats Logo">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html"><button class="btn">Home</button></a>
+                    <a href="blog.html"><button class="btn">Blog</button></a>
+                    <a href="about.html"><button class="btn">About Us</button></a>
+                    <a href=""><button class="btn">User Account</button></a>
+                    <a href="shopping cart.html"><button class="btn">Cart</button></a>
+                    <a href="contact-us.html"><button class="btn">Contact Us</button></a>
+                    <a href="login.html"><button class="btn">Login Page</button></a>
+                </div>
+            </nav>
+        </header>
+        <div class="color-background">
+            <div class="main-background">
+                <div class="head-container">
+                    <h1 class="main-head">Welcome to CleanEats: <br /> Your Destination for Healthy <br /> Living and
+                        Eating</h1>
+                    <p class="main-para">At CleanEats, we are dedicated to providing you with the best resources for a
+                        healthy lifestyle. Our site is a treasure trove of nutritious and delicious recipes, expert
+                        tips, and inspiring meal plans to help you embrace clean eating. </p>
+                    <div class="button-container">
+                        <button class="explore-btn">Explore</button>
+                        <button class="make-orders">Make Order</button>
+                    </div>
+                    <p class="offer">Enjoy 20% off your first order with code CLEANEATS20 when you download the
+                        CleanEats app today!</p>
+                    <button class="explore-btn">Explore More </button>
+                </div>
+                <div>
+                    <div class="card">
+                        <div class="c">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLdD55Igf54Lb5F3MzgcUVBk8PirsF9lQKig&s"
+                                class="images" />
+                            <div class="heads-aligning">
+                                <h1 class="cardhead">Vege Tables</h1>
+                                <p class="cardpara">
+                                    Discover the freshest vegetables, handpicked and packed with nutrients. Perfect for
+                                    creating healthy, delicious meals for you and your family.
+                                </p>
+                                <button class="explore-btn">Explore More </button>
+                            </div>
+
+                        </div>
+                        <div class="c">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIzKYYG96vXHHbNREG7v7n-6mr-1CVJocWUA&s"
+                                class="images" />
+                            <div class="heads-aligning">
+                                <h1 class="cardhead">Ice Creams!</h1>
+                                <p class="cardpara">
+                                    Delight in our creamy and delectable ice creams, available in a wide range of
+                                    flavors. Each scoop is a perfect balance of sweetness and richness.
+                                </p>
+                                <button class="explore-btn">Explore More </button>
+                            </div>
+                        </div>
+                        <div class="c">
+                            <img src="https://media.istockphoto.com/id/848643264/photo/north-indina-thali-lunch-plate-of-north-indian.jpg?s=612x612&w=0&k=20&c=J8Jg7VhqpSla7CwNai1yrlCplL1VTdr0QOB8ifG7KME="
+                                class="images" />
+                            <div class="heads-aligning">
+                                <h1 class="cardhead">Indian Breakfast</h1>
+                                <p class="cardpara">
+                                    Start your day with a wholesome Indian breakfast, featuring classic dishes like
+                                    idli, dosa, and paratha. Enjoy the perfect blend of taste and tradition.
+                                </p>
+                                <button class="explore-btn">Explore More </button>
+                            </div>
+                        </div>
+                        <div class="c">
+                            <img src="https://media.istockphoto.com/id/802896358/photo/chocolate-brownies-with-raspberries-and-currants.jpg?s=612x612&w=0&k=20&c=qlbhy6b0ds3Qgxy3rdljilUsmnEkpkqAh8qx-ka2TrE="
+                                class="images" />
+                            <div class="heads-aligning">
+                                <h1 class="cardhead">Chocolates!</h1>
+                                <p class="cardpara">
+                                    Indulge in our rich and creamy chocolates, crafted from the finest cocoa beans for
+                                    an unforgettable taste. Perfect for satisfying your sweet tooth anytime.
+                                </p>
+                                <button class="explore-btn">Explore More </button>
+                            </div>
+                        </div>
+                        <div class="c">
+                            <img src="https://img.freepik.com/premium-photo/photo-view-tasty-yummy-delicious-indian-biriyani_763111-16521.jpg"
+                                class="images" />
+                            <div class="heads-aligning">
+                                <h1 class="cardhead">Spicy Biriyani</h1>
+                                <p class="cardpara">
+                                    Experience the exotic flavors of our spicy biryani, a fragrant blend of basmati
+                                    rice, tender meat, and aromatic spices. A true delight for spice lovers.
+                                </p>
+                                <button class="explore-btn">Explore More </button>
+                            </div>
+                        </div>
+                        <div class="c">
+                            <img src="https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/vfndmoduxrdu161k2boc.jpg"
+                                class="images" />
+                            <div class="heads-aligning">
+                                <h1 class="cardhead">Cool Shakes</h1>
+                                <p class="cardpara">
+                                    Refresh yourself with our cool shakes, available in a variety of flavors like
+                                    strawberry, chocolate, and vanilla. Each sip is a creamy, chilled treat.
+                                </p>
+                                <button class="explore-btn">Explore More </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
